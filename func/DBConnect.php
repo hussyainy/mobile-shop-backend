@@ -3,9 +3,9 @@
 class Connect
 {
     // Database Connection Properties
-    protected $host = 'localhost';
+    protected $host = '127.0.0.1';
     protected $user = 'root';
-    protected $password = '';
+    protected $password = 'Squ@r30n3';
     protected $database = 'mobileshop';
 
     // connection property

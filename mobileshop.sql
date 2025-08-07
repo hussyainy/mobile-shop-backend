@@ -27,6 +27,8 @@ SET GLOBAL FOREIGN_KEY_CHECKS = 0;
 --
 -- Cấu trúc bảng cho bảng `account`
 --
+CREATE DATABASE mobileshop IF NOT EXISTS;
+use mobileshop;
 
 CREATE TABLE `account` (
   `id` int(10) UNSIGNED NOT NULL,

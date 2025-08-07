@@ -18,7 +18,7 @@ include('func/footer.php');
 ?>
 
 <!-- validate script -->
-<script src="https://ltp.crfnetwork.com/form-validate/js/validator2.js"></script>
+<script src="./libs/validator2.js"></script>
 <script>
     var signUpForm = new Validator('#sign-up');
     signUpForm.onSubmit = function (data) {

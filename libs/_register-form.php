@@ -17,14 +17,14 @@
                     <div class="form-group">
                         <label for="username" class="form-label">Username (*)</label>
                         <input id="username" name="username" type="text" rules="required|min:3|max:10"
-                            placeholder="Chọn tên tài khoản của bạn" class="form-control">
+                            placeholder="Enter Username" class="form-control">
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="password" class="form-label">Password (*)</label>
                         <input id="password" name="password" type="password" rules="required|min:3"
-                            placeholder="Nhập mật khẩu" class="form-control">
+                            placeholder="Enter Password" class="form-control">
                         <span class="form-message"></span>
                     </div>
 

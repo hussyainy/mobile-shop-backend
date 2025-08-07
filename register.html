@@ -91,101 +91,153 @@
                     <p class="desc">Register to receive offers from us right now!</p>
                     <div class="row" style="width: 800px;">
                         <div class="col">
-                            <div class="form-group">
-                                <label for="fullname" class="form-label">Fullname (*)</label>
-                                <input id="fullname" name="fullname" type="text" rules="required"
-                                    placeholder="Nhập tên của bạn" class="form-control">
-                                <span class="form-message"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="username" class="form-label">Username (*)</label>
-                                <input id="username" name="username" type="text" rules="required|min:3|max:10"
-                                    placeholder="Chọn tên tài khoản của bạn" class="form-control">
-                                <span class="form-message"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="form-label">Password (*)</label>
-                                <input id="password" name="password" type="password" rules="required|min:3"
-                                    placeholder="Nhập mật khẩu" class="form-control">
-                                <span class="form-message"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password_confirmation" class="form-label">Confirm password (*)</label>
-                                <input id="password_confirmation" name="password_confirmation"
-                                    rules="required|confirm:#password" placeholder="Nhập lại mật khẩu" type="password"
-                                    class="form-control">
-                                <span class="form-message"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone (*)</label>
-                                <input id="phone" name="phone" type="number" rules="required|min:10|max:10"
-                                    placeholder="Nhập số điện thoại" class="form-control">
-                                <span class="form-message"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Fullname (*)</label>
+                            <input id="fullname" name="fullname" type="text" rules="required"
+                                placeholder="Enter your name" class="form-control">
+                            <span class="form-message"></span>
                         </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="avatar" class="form-label">Avatar</label>
-                                <input id="avatar" name="avatar" type="file" class="form-radio-control">
-                                <span class="form-message"></span>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email (*)</label>
-                                <input id="email" name="email" type="text" rules="required|email"
-                                    placeholder="Nhập email đăng ký" class="form-control">
-                                <span class="form-message"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username (*)</label>
+                            <input id="username" name="username" type="text" rules="required|min:3|max:10"
+                                placeholder="Choose your account username" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="city" class="form-label">City (*)</label>
-                                <select id="city" rules="required" name="city" class="form-control">
-                                    <option value="">-- Chọn thành phố --</option>
-                                    <option value="ha noi">Hà Nội</option>
-                                    <option value="ho chi minh">Hồ Chí Minh</option>
-                                    <option value="thanh hoa">Thanh Hóa</option>
-                                    <option value="nghe an">Nghệ An</option>
-                                    <option value="dong nai">Đồng Nai</option>
-                                    <option value="binh duong">Bình Dương</option>
-                                    <option value="hai phong">Hải Phòng</option>
-                                    <option value="an giang">An Giang</option>
-                                    <option value="hai duong">Hải Dương</option>
-                                    <option value="hue">Huế</option>
-                                </select>
-                                <span class="form-message"></span>
-                            </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password (*)</label>
+                            <input id="password" name="password" type="password" rules="required|min:3"
+                                placeholder="Enter your password" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
 
-                            <div class="form-group">
-                                <label class="form-label">Gender (*)</label>
-                                <div class="form-radio-control">
-                                    <div>
-                                        <input name="gender" type="radio" rules="checkone:gender" value="nam"
-                                            class="form-radio">Nam
-                                    </div>
-                                    <div>
-                                        <input name="gender" type="radio" rules="checkone:gender" value="nu"
-                                            class="form-radio">Nữ
-                                    </div>
-                                    <div>
-                                        <input name="gender" type="radio" rules="checkone:gender" value="khac"
-                                            class="form-radio">Khác
-                                    </div>
+                        <div class="form-group">
+                            <label for="password_confirmation" class="form-label">Confirm password (*)</label>
+                            <input id="password_confirmation" name="password_confirmation"
+                                rules="required|confirm:#password" placeholder="Re-enter your password" type="password"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone (*)</label>
+                            <input id="phone" name="phone" type="number" rules="required|min:10|max:10"
+                                placeholder="Enter your phone number" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <!-- ... -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email (*)</label>
+                            <input id="email" name="email" type="text" rules="required|email"
+                                placeholder="Enter your email" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city" class="form-label">City (*)</label>
+                            <select id="city" rules="required" name="city" class="form-control">
+                                <option value="">-- Select a city --</option>
+                                <optgroup label="Kuala Lumpur">
+                                    <option value="kuala lumpur">Kuala Lumpur</option>
+                                </optgroup>
+                                <optgroup label="Selangor">
+                                    <option value="shah alam">Shah Alam</option>
+                                    <option value="petaling jaya">Petaling Jaya</option>
+                                    <option value="subang jaya">Subang Jaya</option>
+                                    <option value="ampang">Ampang</option>
+                                    <option value="klang">Klang</option>
+                                </optgroup>
+                                <optgroup label="Penang">
+                                    <option value="george town">George Town</option>
+                                    <option value="butterworth">Butterworth</option>
+                                    <option value="bukit mertajam">Bukit Mertajam</option>
+                                </optgroup>
+                                <optgroup label="Perak">
+                                    <option value="ipoh">Ipoh</option>
+                                    <option value="taiping">Taiping</option>
+                                    <option value="teluk intan">Teluk Intan</option>
+                                </optgroup>
+                                <optgroup label="Johor">
+                                    <option value="johor bahru">Johor Bahru</option>
+                                    <option value="batu pahat">Batu Pahat</option>
+                                    <option value="kluang">Kluang</option>
+                                    <option value="muar">Muar</option>
+                                </optgroup>
+                                <optgroup label="Melaka">
+                                    <option value="malacca city">Malacca City</option>
+                                    <option value="alor gajah">Alor Gajah</option>
+                                </optgroup>
+                                <optgroup label="Kedah">
+                                    <option value="alor setar">Alor Setar</option>
+                                    <option value="sungai petani">Sungai Petani</option>
+                                </optgroup>
+                                <optgroup label="Kelantan">
+                                    <option value="kota bharu">Kota Bharu</option>
+                                    <option value="tumpat">Tumpat</option>
+                                </optgroup>
+                                <optgroup label="Pahang">
+                                    <option value="kuantan">Kuantan</option>
+                                    <option value="temerloh">Temerloh</option>
+                                </optgroup>
+                                <optgroup label="Terengganu">
+                                    <option value="kuala terengganu">Kuala Terengganu</option>
+                                    <option value="dungun">Dungun</option>
+                                </optgroup>
+                                <optgroup label="Negeri Sembilan">
+                                    <option value="seremban">Seremban</option>
+                                    <option value="port dickson">Port Dickson</option>
+                                </optgroup>
+                                <optgroup label="Perlis">
+                                    <option value="kangar">Kangar</option>
+                                </optgroup>
+                                <optgroup label="Sabah">
+                                    <option value="kota kinabalu">Kota Kinabalu</option>
+                                    <option value="sandakan">Sandakan</option>
+                                    <option value="tawau">Tawau</option>
+                                </optgroup>
+                                <optgroup label="Sarawak">
+                                    <option value="kuching">Kuching</option>
+                                    <option value="miri">Miri</option>
+                                    <option value="sibu">Sibu</option>
+                                    <option value="bintulu">Bintulu</option>
+                                </optgroup>
+                                <optgroup label="Putrajaya">
+                                    <option value="putrajaya">Putrajaya</option>
+                                </optgroup>
+                                <optgroup label="Labuan">
+                                    <option value="labuan">Labuan</option>
+                                </optgroup>
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="form-label">Gender (*)</label>
+                            <div class="form-radio-control">
+                                <div>
+                                    <input name="gender" type="radio" rules="checkone:gender" value="male"
+                                        class="form-radio">Male
                                 </div>
-                                <span class="form-message"></span>
+                                <div>
+                                    <input name="gender" type="radio" rules="checkone:gender" value="female"
+                                        class="form-radio">Female
+                                </div>
+                                <div>
+                                    <input name="gender" type="radio" rules="checkone:gender" value="other"
+                                        class="form-radio">Other
+                                </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="address" class="form-label">Address</label>
-                                <input id="address" name="address" type="text" placeholder="Nhập địa chỉ của bạn"
-                                    class="form-control">
-                                <span class="form-message"></span>
-                            </div>
+                            <span class="form-message"></span>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="address" class="form-label">Address</label>
+                            <input id="address" name="address" type="text" placeholder="Enter your address"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
 
                     <button class="form-submit" type="submit" name="register-submit">Sign up</button>
                     <p class="desc">Already have an account? <a href="./login.html">Sign in</a></p>
@@ -266,7 +318,7 @@
     <script src="https://cdn.crfnetwork.com/js/dark-mode-switch.js"></script>
     
     <!-- validate script -->
-    <script src="https://ltp.crfnetwork.com/form-validate/js/validator2.js"></script>
+    <script src="./libs/validator2.js"></script>
     <script>
         var signUpForm = new Validator('#sign-up');
         signUpForm.onSubmit = function (data) {

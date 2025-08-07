@@ -82,56 +82,68 @@ class Account
     }
 
     // handle user registration
-    public function register(
-        $fullname = null,
-        $username = null,
-        $password = null,
-        $phone = null,
-        $avatar = null,
-        $email = null,
-        $city = null,
-        $gender = null,
-        $address = null
-    )
-    {
-        if (
-            $fullname != null
-            && $username != null
-            && $password != null
-            && $phone != null
-            // && $avatar != null
-            && $email != null
-            && $city != null
-            && $gender != null
-            // && $address != null
-        ) {
-            if ($avatar == null) {
-                $avatar = null;
-            }
-            if ($address == null) {
-                $address = null;
-            }
-            $sqlAccount = "INSERT INTO account(username, password, email) VALUES ('{$username}','{$password}','{$email}')";
+   public function register(
+    $fullname = null,
+    $username = null,
+    $password = null,
+    $phone = null,
+    $avatar = null,
+    $email = null,
+    $city = null,
+    $gender = null,
+    $address = null
+) {
+    if (
+        $fullname != null
+        && $username != null
+        && $password != null
+        && $phone != null
+        && $email != null
+        && $city != null
+        && $gender != null
+    ) {
+        if ($avatar == null) {
+            $avatar = null;
+        }
+        if ($address == null) {
+            $address = null;
+        }
+
+        // Start transaction to handle both inserts
+        $this->db->con->begin_transaction();
+
+        try {
+            // Insert user record first
             $sqlUser = "INSERT INTO user(fullname, phone, avatar, city, gender, address) VALUES ('{$fullname}','{$phone}','{$avatar}','{$city}','{$gender}','{$address}')";
-            $resultAcc = $this->db->con->query($sqlAccount);
             $resultUser = $this->db->con->query($sqlUser);
-            if ($resultAcc && $resultUser) {
-                header('Location: ' . $_SERVER['REQUEST_URI']);
-                return true;
-            } else if ($resultUser) {
-                echo "<script>alert('Register Account fail');</script>";
-                $this->db->con->query("DELETE FROM account WHERE username = '{$username}'");
-                return false;
-            } else if ($resultAcc) {
-                echo "<script>alert('Register User fail');</script>";
-                $this->db->con->query("DELETE FROM user WHERE fullname = '{$fullname}'");
-                return false;
+            
+            if ($resultUser) {
+                // Get the inserted user's ID
+                $userId = $this->db->con->insert_id;
+
+                // Insert account record
+                $sqlAccount = "INSERT INTO account(id, username, password, email) VALUES ('{$userId}','{$username}','{$password}','{$email}')";
+                $resultAcc = $this->db->con->query($sqlAccount);
+
+                if ($resultAcc) {
+                    // Commit transaction
+                    $this->db->con->commit();
+                    header('Location: ' . $_SERVER['REQUEST_URI']);
+                    return true;
+                } else {
+                    throw new Exception('Failed to insert into account');
+                }
             } else {
-                echo "<script>alert('Register fail');</script>";
-                return false;
+                throw new Exception('Failed to insert into user');
             }
+        } catch (Exception $e) {
+            // Rollback transaction in case of error
+            $this->db->con->rollback();
+            echo "<script>alert('{$e->getMessage()}');</script>";
+            return false;
         }
     }
+}
 
     // delete account item using account id
     public function deleteAcc($id = null, $table = 'account')
